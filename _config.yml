@@ -6,7 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Gilberto
 middle_name: G.
 last_name: Briscoe-Martinez
-email: gilbert.martinez675@utexas.edu
+email: gilberto.briscoe-martinez@colorado.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Roboticist. Futurist. Cyclist.
 footer_text: >
@@ -26,7 +26,7 @@ navbar_fixed: true
 footer_fixed: false
 
 # Dimensions
-max_width: 800px
+max_width: 1000px
 
 # TODO: add layout settings (single page vs. multi-page)
 
@@ -34,7 +34,7 @@ max_width: 800px
 # Open Graph
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
 og_image: # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
