@@ -1,28 +1,13 @@
 ---
 layout: post
-title:  a post with formatting and links
-date:   2015-03-15 16:40:16
-description: march & april, looking forward to summer
+title:  NSTGRO Award
+date:   2022-07-01 1:30:00
+description: I'm a 2022 NSTGRO Awardee
 ---
-Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com" target="blank">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice" target="blank">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.
-
-#### Hipster list
-<ul>
-    <li>brunch</li>
-    <li>fixie</li>
-    <li>raybans</li>
-    <li>messenger bag</li>
-</ul>
-
-Hoodie Thundercats retro, tote bag 8-bit Godard craft beer gastropub. Truffaut Tumblr taxidermy, raw denim Kickstarter sartorial dreamcatcher. Quinoa chambray slow-carb salvia readymade, bicycle rights 90's yr typewriter selfies letterpress cardigan vegan.
-
-<hr>
-
-Pug heirloom High Life vinyl swag, single-origin coffee four dollar toast taxidermy reprehenderit fap distillery master cleanse locavore. Est anim sapiente leggings Brooklyn ea. Thundercats locavore excepteur veniam eiusmod. Raw denim Truffaut Schlitz, migas sapiente Portland VHS twee Bushwick Marfa typewriter retro id keytar.
-
+I'm excited to share that my NSTGRO proposal titled *Enabling Long-term Robot Autonomy through Adaptable Fault Resilience* has been funded!
+My research will encompass the follwing:
 <blockquote>
-    We do not grow absolutely, chronologically. We grow sometimes in one dimension, and not in another, unevenly. We grow partially. We are relative. We are mature in one realm, childish in another.
-    —Anais Nin
+When robots are sent to the surface of Mars or space stations like the ISS or Gateway, they will need to act autonomously for long durations of time and be exposed to challenging environments. In these conditions, robots have a high likelihood of experiencing some form of system failure. Presently, most robotic missions require engineers to develop pre-designed failure responses, significantly increasing the preparation time and decreasing the robot’s ability to continue operating if it fails in an unforeseen way. This current approach does not offer the scalability needed for large-scale robot deployments to happen--deployments that NASA will need to pave the way for humans to go back to the Moon and eventually Mars. To enable mass robotic systems to accompany and lead long-term space missions, my research will develop a unified system that utilizes redundant actuation to creatively adapt a robot’s actions in realtime in the event of one or multiple faults. Autonomous robots using this system will have greater flexibility than with classic control loops alone. This will increase the time between catastrophic failures, decrease the cost of robot deployment, and improve mission
+longevity.
 </blockquote>
-
-Fap aliqua qui, scenester pug Echo Park polaroid irony shabby chic ex cardigan church-key Odd Future accusamus. Blog stumptown sartorial squid, gastropub duis aesthetic Truffaut vero. Pinterest tilde twee, odio mumblecore jean shorts lumbersexual.
+I lookforward to 
