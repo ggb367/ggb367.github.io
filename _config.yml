@@ -8,7 +8,7 @@ middle_name: G.
 last_name: Briscoe-Martinez
 email: gilberto.briscoe-martinez@colorado.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Roboticist. Futurist. Cyclist.
+  PhD Student in the HIRO Group at the University of Colorado Boulder | NASA Space Technology Graduate Researcher
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -42,7 +42,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # -----------------------------------------------------------------------------
 
 github_username: ggb367
-twitter_username: gilbotics
+twitter_username: 
 linkedin_username: gbmartinez
 scholar_userid: 6MNXSfsAAAAJ # your Google Scholar ID
 orcid_id: 0000-0002-6107-1430 # your ORCID ID
@@ -56,7 +56,7 @@ keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 
 contact_note: >
-  The best way to reach me is by email, though if you DM me through Twitter I may also respond.
+  The best way to reach me is by email.
 
 google_analytics: UA-XXXXXXXXX # out your google-analytics code
 panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
@@ -87,7 +87,7 @@ collections:
     output: true
     permalink: /news/:path/
   projects:
-    output: true
+    output: false
     permalink: /projects/:path/
 
 news_limit: 5
