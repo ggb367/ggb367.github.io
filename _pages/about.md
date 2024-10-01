@@ -6,11 +6,11 @@ description: <a href="https://hiro-group.ronc.one/">Human Interaction and Roboti
 
 profile:
   align: right
-  image: prof_pic.png
+  image: mountain_selfie.jpg
 
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a roboticst discovering the best way for robots to operate when some of their system has failed. My long-term research goal is to allow robots to operate indepently for autonomy timelines of months to years. My work is centered around enabling new manipultion abilities, adapting motion planning approaches, and then tailor their task specific actions to allow robots recover from or operate with faults. I graduated from The University of Texas at Austin with a Bachelor of Science in Aerospace Engineering in May 2021 and am currently pursuing my Doctor of Philosophy in Computer Science at the **University of Colorado - Boulder** in the [HIRO Group](https://hiro-group.ronc.one/).
+I am a roboticst developing autonomous systems that are capabale of conducting manipulation tasks independently and collaboratively, with people and with other robots. My PhD research goal is to allow robots to operate indepently for autonomy timelines of months to years. My work is centered around enabling new manipultion abilities, adapting motion planning approaches, and then tailor their task specific actions to allow robots recover from or operate with faults. My long-term goal is to develop an autonmous system capable of handling multiple, distinct manipulation tasks. I graduated from The University of Texas at Austin with a Bachelor of Science in Aerospace Engineering in May 2021 and am currently pursuing my Doctor of Philosophy in Computer Science at the **University of Colorado - Boulder** in the [HIRO Group](https://hiro-group.ronc.one/).

@@ -3,15 +3,19 @@ layout: page
 permalink: /publications/
 title: publications
 description: A list of my publications.
-years: [2022, 2021, 2020, 2019]
+years: [2024, 2019]
 nav: true
 ---
 
-<div class="publications">
+<section id="post-cv">
+    <div class="container">
+        <div id="article">
 
-{% for y in page.years %}
-  <h2 class="year">{{y}}</h2>
-  {% bibliography -f papers -q @*[year={{y}}]* %}
-{% endfor %}
+        {% for y in page.years %}
+            <h1>{{ y }}</h1>
+            {% include pubs.html year=y publications=site.data.publications %}
+        {% endfor %}
 
-</div>
+        </div>
+    </div>
+</section>
