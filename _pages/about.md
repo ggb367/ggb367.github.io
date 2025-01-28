@@ -6,7 +6,7 @@ description: <a href="https://hiro-group.ronc.one/">Human Interaction and Roboti
 
 profile:
   align: right
-  image: mountain_selfie.jpg
+  image: 2024_headshot.jpg
 
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
