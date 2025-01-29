@@ -29,12 +29,12 @@ layout: default
       {{ content }}
     </div>
 
-    {% if page.news %}
-      {% include news.html %}
+    {% if page.selected_papers %}
+      {% include selected_papers.html year=2024 publications=site.data.publications%}
     {% endif %}
 
-    {% if page.selected_papers %}
-      {% include selected_papers.html %}
+    {% if page.news %}
+      {% include news.html %}
     {% endif %}
 
     {% if page.social %}

@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 description: <a href="https://hiro-group.ronc.one/">Human Interaction and Robotics Group </a>.
 
@@ -9,7 +9,7 @@ profile:
   image: 2024_headshot.jpg
 
 news: true  # includes a list of news items
-selected_papers: false # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
