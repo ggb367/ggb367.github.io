@@ -14,7 +14,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 
 url: https://gilberto.martinez.phd # the base hostname & protocol for your site
-baseurl:  # the subpath of your site, e.g. /blog/
+baseurl: "" # must be explicit empty string, not YAML null, or jekyll-github-metadata auto-fills it
 repository: ggb367/ggb367.github.io # used by jekyll-github-metadata; required when building in CI
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR

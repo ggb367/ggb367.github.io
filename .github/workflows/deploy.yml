@@ -26,9 +26,10 @@ jobs:
           bundler-cache: true
 
       - name: Build site
-        run: bundle exec jekyll build --trace
+        run: bundle exec jekyll build --trace --baseurl ""
         env:
           JEKYLL_ENV: production
+          PAGES_REPO_NWO: ${{ github.repository }}
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
