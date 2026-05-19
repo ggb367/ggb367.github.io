@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Gilberto G. Briscoe-Martinez | a post with github metadata</title>
+<title>Gilberto G. Briscoe-Martinez | Contact-Friendly Robotic Manipulators</title>
 <meta name="description" content="PhD Student in the HIRO Group at the University of Colorado Boulder | NASA Space Technology Graduate Researcher
 ">
 
@@ -16,8 +16,8 @@
 " />
 <meta property="og:type" content="object" />
 <meta property="og:title" content="" />
-<meta property="og:url" content="https://gilberto.martinez.phd/pages/ggb367/blog/2020/github-metadata/" />
-<meta property="og:description" content="a post with github metadata" />
+<meta property="og:url" content="https://gilberto.martinez.phd/pages/ggb367/projects/2_contact_friendly_robots/" />
+<meta property="og:description" content="Contact-Friendly Robotic Manipulators" />
 <meta property="og:image" content="" />
 
 
@@ -37,7 +37,7 @@
 <link rel="shortcut icon" href="/pages/ggb367/assets/img/favicon.ico">
 <link rel="stylesheet" href="/pages/ggb367/assets/css/main.css">
 
-<link rel="canonical" href="/pages/ggb367/blog/2020/github-metadata/">
+<link rel="canonical" href="/pages/ggb367/projects/2_contact_friendly_robots/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -153,124 +153,57 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      
-
-<div class="post">
+      <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">a post with github metadata</h1>
-    <p class="post-meta">September 28, 2020</p>
+    <h1 class="post-title">Contact-Friendly Robotic Manipulators</h1>
+    <p class="post-description">Provably safe contact-rich manipulation that treats touching the world as a resource, not a hazard.</p>
   </header>
 
-  <article class="post-content">
-    <p>A sample blog page that demonstrates the accessing of github meta data.</p>
+  <article>
+    <h2 id="motivation">Motivation</h2>
 
-<h2 id="what-does-github-metadata-do">What does Github-MetaData do?</h2>
+<p>Traditional motion planning treats contact with the environment as a hazard to be <strong>avoided</strong>. But modern manipulation — wiping a surface, pushing an object, leaning against a wall — needs contact to be treated as a <strong>resource</strong>. This project develops control-theoretic methods that let robots transition seamlessly between free motion and contact, with <strong>provable</strong> guarantees on constraint satisfaction and stability.</p>
+
+<p>The work is done in collaboration with <a href="https://yaashia-g.github.io/">Yaashia Gautam</a> and the <a href="https://www.colorado.edu/faculty/nicotra/robotics-optimization-and-constrained-control">ROCC Lab</a> (Marco M. Nicotra) at CU Boulder, with the <a href="https://hiro-group.ronc.one/">HIRO Group</a> (Alessandro Roncone).</p>
+
+<hr />
+
+<h2 id="papers">Papers</h2>
+
+<h3 id="compliant-explicit-reference-governor-for-contact-friendly-robotic-manipulators">Compliant Explicit Reference Governor for Contact Friendly Robotic Manipulators</h3>
+
+<p><i>Yaashia Gautam, Gilberto Briscoe-Martinez (co-first authors), Adhitya Mohan, Nataliya Nechyporenko, Alessandro Roncone, Marco M. Nicotra</i><br />
+<b>IFAC World Congress, 2026</b></p>
+
+<p>We introduce <strong>CERG</strong>, the <strong>C</strong>ompliant <strong>E</strong>xplicit <strong>R</strong>eference <strong>G</strong>overnor: a modular safety filter that sits between any high-level planner and any low-level controller and enables:</p>
+
 <ul>
-  <li>Propagates the site.github namespace with repository metadata</li>
-  <li>Setting site variables :
-    <ul>
-      <li>site.title</li>
-      <li>site.description</li>
-      <li>site.url</li>
-      <li>site.baseurl</li>
-    </ul>
-  </li>
-  <li>Accessing the metadata - duh.</li>
-  <li>Generating edittable links.</li>
+  <li><strong>Free motion</strong> with no performance penalty when contact is not required.</li>
+  <li><strong>Safe contact</strong> by bounding the total mechanical energy (kinetic + potential) of the closed-loop system below a user-defined <code class="language-plaintext highlighter-rouge">Emax</code>.</li>
+  <li><strong>Smooth transitions</strong> between free motion and contact without rewriting the controller or solving a custom MPC at runtime.</li>
 </ul>
 
-<h2 id="additional-reading">Additional Reading</h2>
-<ul>
-  <li>If you’re recieving incorrect/missing data, you may need to perform a Github API<a href="https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md"> authentication</a>.</li>
-  <li>Go through this <a href="https://jekyll.github.io/github-metadata/" target="blank">README</a> for more details on the topic.</li>
-  <li><a href="https://github.com/jekyll/github-metadata/blob/master/docs/site.github.md">This page</a> highlights all the feilds you can access with github-metadata.
-<br /></li>
-</ul>
+<p>Technically, CERG extends the Explicit Reference Governor framework with:</p>
 
-<h2 id="example-metadata">Example MetaData</h2>
-<ul>
-  <li>Host Name : github.com</li>
-  <li>URL : https://github.com/pages/ggb367</li>
-  <li>BaseURL : /pages/ggb367</li>
-  <li>Archived : false</li>
-  <li>
-    <p>Contributors :</p>
+<ol>
+  <li>A <strong>Compliant Dynamic Safety Margin</strong> that handles disjunctive (OR-type) constraints — “avoid the surface <em>or</em> contact it with bounded energy.”</li>
+  <li>A <strong>Soft Navigation Field</strong> that lets the virtual reference penetrate the constraint boundary, producing compliant contact behavior.</li>
+  <li><strong>Provable</strong> guarantees on constraint satisfaction and asymptotic stability, with no controller redesign required.</li>
+</ol>
 
-    <ul>
-      <li>
-        <p>alshedivat</p>
-      </li>
-      <li>
-        <p>ggb367</p>
-      </li>
-      <li>
-        <p>samfearn</p>
-      </li>
-      <li>
-        <p>monkeywithacupcake</p>
-      </li>
-      <li>
-        <p>adunning</p>
-      </li>
-      <li>
-        <p>g-oikonomou</p>
-      </li>
-      <li>
-        <p>junghans</p>
-      </li>
-      <li>
-        <p>ziruizhuang</p>
-      </li>
-      <li>
-        <p>huyen-nguyen</p>
-      </li>
-      <li>
-        <p>mvdoc</p>
-      </li>
-      <li>
-        <p>swabhs</p>
-      </li>
-      <li>
-        <p>AbstractGeek</p>
-      </li>
-      <li>
-        <p>jasongfleischer</p>
-      </li>
-      <li>
-        <p>krrish94</p>
-      </li>
-      <li>
-        <p>mpmdean</p>
-      </li>
-      <li>
-        <p>kakodkar</p>
-      </li>
-      <li>
-        <p>sahirbhatnagar</p>
-      </li>
-      <li>
-        <p>shpark</p>
-      </li>
-      <li>
-        <p>yoonholee</p>
-      </li>
-      <li>
-        <p>zrqiao</p>
-      </li>
-      <li>
-        <p>jkmacc-LANL</p>
-      </li>
-      <li>
-        <p>zt-chen</p>
-      </li>
-    </ul>
-  </li>
-</ul>
+<p>Validated on a progression of platforms: a 2-link planar arm in MATLAB, a 7-DoF Franka Emika Panda in Drake (Compliant Contact Model), and two real-world Franka tasks — <strong>whiteboard wiping</strong> (enforcing three different <code class="language-plaintext highlighter-rouge">Emax</code> levels during contact) and <strong>Jenga tower pushing</strong> (bounded-energy contact without toppling the stack). CERG succeeds on both; standard ERG and Cartesian impedance control each fail in at least one.</p>
+
+<p>[<a href="/pages/ggb367/papers/2026_Gautam_IFAC_CERG.pdf">PDF</a>]  
+[<a href="/pages/ggb367/papers/2026_Gautam_IFAC_CERG.bib">BibTeX</a>]</p>
+
+<hr />
+
+<h2 id="funding--acknowledgments">Funding &amp; Acknowledgments</h2>
+
+<p>This work is supported in part by <strong>NSF-CMMI CAREER Grant #2046212</strong> and the <strong>NASA Space Technology Graduate Research Opportunity</strong> program (Grant 80NSSC22K1211).</p>
 
   </article>
-
-  
 
 </div>
 

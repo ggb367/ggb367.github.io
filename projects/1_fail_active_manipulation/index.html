@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Gilberto G. Briscoe-Martinez | a post with github metadata</title>
+<title>Gilberto G. Briscoe-Martinez | Fail-Active Manipulation</title>
 <meta name="description" content="PhD Student in the HIRO Group at the University of Colorado Boulder | NASA Space Technology Graduate Researcher
 ">
 
@@ -16,8 +16,8 @@
 " />
 <meta property="og:type" content="object" />
 <meta property="og:title" content="" />
-<meta property="og:url" content="https://gilberto.martinez.phd/pages/ggb367/blog/2020/github-metadata/" />
-<meta property="og:description" content="a post with github metadata" />
+<meta property="og:url" content="https://gilberto.martinez.phd/pages/ggb367/projects/1_fail_active_manipulation/" />
+<meta property="og:description" content="Fail-Active Manipulation" />
 <meta property="og:image" content="" />
 
 
@@ -37,7 +37,7 @@
 <link rel="shortcut icon" href="/pages/ggb367/assets/img/favicon.ico">
 <link rel="stylesheet" href="/pages/ggb367/assets/css/main.css">
 
-<link rel="canonical" href="/pages/ggb367/blog/2020/github-metadata/">
+<link rel="canonical" href="/pages/ggb367/projects/1_fail_active_manipulation/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -153,124 +153,68 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      
-
-<div class="post">
+      <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">a post with github metadata</h1>
-    <p class="post-meta">September 28, 2020</p>
+    <h1 class="post-title">Fail-Active Manipulation</h1>
+    <p class="post-description">Letting robots keep working when their hardware breaks &mdash; no fail-freeze, no human rescue.</p>
   </header>
 
-  <article class="post-content">
-    <p>A sample blog page that demonstrates the accessing of github meta data.</p>
+  <article>
+    <h2 id="motivation">Motivation</h2>
 
-<h2 id="what-does-github-metadata-do">What does Github-MetaData do?</h2>
-<ul>
-  <li>Propagates the site.github namespace with repository metadata</li>
-  <li>Setting site variables :
-    <ul>
-      <li>site.title</li>
-      <li>site.description</li>
-      <li>site.url</li>
-      <li>site.baseurl</li>
-    </ul>
-  </li>
-  <li>Accessing the metadata - duh.</li>
-  <li>Generating edittable links.</li>
-</ul>
+<p>Most safety standards mandate <strong>fail-freeze</strong> behavior: when a fault is detected, the robot must stop. This is safe but throws away the robot’s remaining capability — and in space, in remote facilities, or anywhere humans can’t intervene quickly, “stop until rescued” is a non-starter.</p>
 
-<h2 id="additional-reading">Additional Reading</h2>
-<ul>
-  <li>If you’re recieving incorrect/missing data, you may need to perform a Github API<a href="https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md"> authentication</a>.</li>
-  <li>Go through this <a href="https://jekyll.github.io/github-metadata/" target="blank">README</a> for more details on the topic.</li>
-  <li><a href="https://github.com/jekyll/github-metadata/blob/master/docs/site.github.md">This page</a> highlights all the feilds you can access with github-metadata.
-<br /></li>
-</ul>
+<p>This project develops <strong>fail-active</strong> robots: systems that, when joints lock, slow down, or lose range, <em>creatively adapt</em> to keep completing their tasks. The work is supported by NASA’s Space Technology Graduate Research Opportunity Grant (80NSSC22K1211).</p>
 
-<h2 id="example-metadata">Example MetaData</h2>
-<ul>
-  <li>Host Name : github.com</li>
-  <li>URL : https://github.com/pages/ggb367</li>
-  <li>BaseURL : /pages/ggb367</li>
-  <li>Archived : false</li>
-  <li>
-    <p>Contributors :</p>
+<hr />
 
-    <ul>
-      <li>
-        <p>alshedivat</p>
-      </li>
-      <li>
-        <p>ggb367</p>
-      </li>
-      <li>
-        <p>samfearn</p>
-      </li>
-      <li>
-        <p>monkeywithacupcake</p>
-      </li>
-      <li>
-        <p>adunning</p>
-      </li>
-      <li>
-        <p>g-oikonomou</p>
-      </li>
-      <li>
-        <p>junghans</p>
-      </li>
-      <li>
-        <p>ziruizhuang</p>
-      </li>
-      <li>
-        <p>huyen-nguyen</p>
-      </li>
-      <li>
-        <p>mvdoc</p>
-      </li>
-      <li>
-        <p>swabhs</p>
-      </li>
-      <li>
-        <p>AbstractGeek</p>
-      </li>
-      <li>
-        <p>jasongfleischer</p>
-      </li>
-      <li>
-        <p>krrish94</p>
-      </li>
-      <li>
-        <p>mpmdean</p>
-      </li>
-      <li>
-        <p>kakodkar</p>
-      </li>
-      <li>
-        <p>sahirbhatnagar</p>
-      </li>
-      <li>
-        <p>shpark</p>
-      </li>
-      <li>
-        <p>yoonholee</p>
-      </li>
-      <li>
-        <p>zrqiao</p>
-      </li>
-      <li>
-        <p>jkmacc-LANL</p>
-      </li>
-      <li>
-        <p>zt-chen</p>
-      </li>
-    </ul>
-  </li>
-</ul>
+<h2 id="papers">Papers</h2>
+
+<h3 id="moving-on-even-when-youre-broken-fail-active-trajectory-generation-via-diffusion-policies-conditioned-on-embodiment-and-task">Moving On, Even When You’re Broken: Fail-Active Trajectory Generation via Diffusion Policies Conditioned on Embodiment and Task</h3>
+
+<p><i>Gilberto G. Briscoe-Martinez, Yaashia Gautam, Rahul Shetty, Anuj Pasricha, Marco M. Nicotra, Alessandro Roncone</i><br />
+<b>IEEE International Conference on Robotics and Automation (ICRA), 2026</b></p>
+
+<p>We introduce <strong>DEFT</strong>, a <strong>D</strong>iffusion-based <strong>E</strong>mbodiment-aware <strong>F</strong>ail-active <strong>T</strong>ask-conditioned trajectory generator. Each failure (locked joints, reduced ranges, restricted velocities) is interpreted as a new <em>embodiment</em> of the robot, and a single diffusion policy is conditioned on:</p>
+
+<ol>
+  <li>A structured <strong>embodiment encoding</strong> capturing per-joint position and velocity limits induced by failure;</li>
+  <li>A <strong>task constraint encoding</strong> that selects between unconstrained (pick-and-place) and constrained (pushing, surface tracing) motion primitives.</li>
+</ol>
+
+<p>Start–goal inpainting and output clamping hard-enforce endpoint feasibility throughout the denoising process. Across <strong>4.7k failure conditions</strong> and <strong>4.7M trajectories</strong> on a 7-DoF Franka Panda, DEFT achieves <strong>99.5%</strong> success on unconstrained motion (vs. 42.4% RRT) and <strong>46.4%</strong> on constrained motion (vs. 30.9% differential IK), with near-parity in-distribution / out-of-distribution performance. Real-world drawer-manipulation and whiteboard-erasing trials show perfect (10/10) task completion under multi-joint failures where classical optimization fails entirely.</p>
+
+<p>[<a href="/pages/ggb367/papers/2026_Briscoe-Martinez_ICRA_DEFT.pdf">PDF</a>]  
+[<a href="/pages/ggb367/papers/2026_Briscoe-Martinez_ICRA_DEFT.bib">BibTeX</a>]</p>
+
+<hr />
+
+<h3 id="exploring-how-non-prehensile-manipulation-expands-capability-in-robots-experiencing-multi-joint-failure">Exploring How Non-Prehensile Manipulation Expands Capability in Robots Experiencing Multi-Joint Failure</h3>
+
+<p><i>Gilberto Briscoe-Martinez, Anuj Pasricha, Ava Abderezaei, Santosh Chaganti, Sarath Chandra Vajrala, Sri Kanth Popuri, Alessandro Roncone</i><br />
+<b>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2024</b></p>
+
+<p>This work demonstrates that <strong>non-prehensile manipulation</strong> (pushing, poking, whole-body interaction) can keep a manipulator useful even after <strong>locked multi-joint (LMJ) failures</strong> that severely restrict reachable workspace. The contributions are:</p>
+
+<ol>
+  <li><strong>Failure-Constrained Workspace Modeling</strong> — characterizing reachability and action space when multiple joints are inoperable.</li>
+  <li><strong>Kinodynamic Mapping of Non-Prehensile Actions</strong> — pre-computing pushes and pokes as recovery primitives.</li>
+  <li><strong>A Simulation-Driven Manipulation Planner</strong> — a sim-in-the-loop scheme that selects the best non-prehensile action under the current failure.</li>
+</ol>
+
+<p>Results: the method <strong>expands the failure-constrained workspace by up to 79%</strong> and reaches <strong>88.9% task success even when the end-effector is unusable</strong>, establishing non-prehensile actions as a key tool for failure-resilient manipulation.</p>
+
+<p>[<a href="/pages/ggb367/papers/2024_Martinez_IROS_failure_recovery.pdf">PDF</a>]  
+[<a href="/pages/ggb367/papers/2024_Martinez_IROS_failure_recovery.bib">BibTeX</a>]</p>
+
+<hr />
+
+<h2 id="funding--acknowledgments">Funding &amp; Acknowledgments</h2>
+
+<p>This work is supported by the <strong>NASA Space Technology Graduate Research Opportunity (NSTGRO)</strong> program, Grant 80NSSC22K1211, in collaboration with the <a href="https://hiro-group.ronc.one/">HIRO Group</a> at the University of Colorado Boulder.</p>
 
   </article>
-
-  
 
 </div>
 

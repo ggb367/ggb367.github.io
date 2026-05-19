@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Gilberto G. Briscoe-Martinez | a post with github metadata</title>
+<title>Gilberto G. Briscoe-Martinez | DEFT Accepted at ICRA 2026 -- Fail-Active Trajectory Generation via Diffusion Policies!</title>
 <meta name="description" content="PhD Student in the HIRO Group at the University of Colorado Boulder | NASA Space Technology Graduate Researcher
 ">
 
@@ -16,8 +16,8 @@
 " />
 <meta property="og:type" content="object" />
 <meta property="og:title" content="" />
-<meta property="og:url" content="https://gilberto.martinez.phd/pages/ggb367/blog/2020/github-metadata/" />
-<meta property="og:description" content="a post with github metadata" />
+<meta property="og:url" content="https://gilberto.martinez.phd/pages/ggb367/news/ICRA2026_DEFT_acceptance/" />
+<meta property="og:description" content="DEFT Accepted at ICRA 2026 -- Fail-Active Trajectory Generation via Diffusion Policies!" />
 <meta property="og:image" content="" />
 
 
@@ -37,7 +37,7 @@
 <link rel="shortcut icon" href="/pages/ggb367/assets/img/favicon.ico">
 <link rel="stylesheet" href="/pages/ggb367/assets/css/main.css">
 
-<link rel="canonical" href="/pages/ggb367/blog/2020/github-metadata/">
+<link rel="canonical" href="/pages/ggb367/news/ICRA2026_DEFT_acceptance/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -158,115 +158,38 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">a post with github metadata</h1>
-    <p class="post-meta">September 28, 2020</p>
+    <h1 class="post-title">DEFT Accepted at ICRA 2026 -- Fail-Active Trajectory Generation via Diffusion Policies!</h1>
+    <p class="post-meta">February 18, 2026</p>
   </header>
 
   <article class="post-content">
-    <p>A sample blog page that demonstrates the accessing of github meta data.</p>
+    <p>I’m thrilled to share that our paper, <strong>“Moving On, Even When You’re Broken: Fail-Active Trajectory Generation via Diffusion Policies Conditioned on Embodiment and Task”</strong>, has been accepted to the <strong>2026 IEEE International Conference on Robotics and Automation (ICRA)</strong>!</p>
 
-<h2 id="what-does-github-metadata-do">What does Github-MetaData do?</h2>
+<h2 id="paper-summary"><strong>Paper Summary</strong></h2>
+<p>This work introduces <strong>DEFT</strong>, a <strong>Diffusion-based Embodiment-aware Fail-active Task-conditioned</strong> trajectory generator. The motivation is simple: when a robot’s hardware degrades — locked joints, reduced ranges of motion, or restricted velocities — prevailing safety standards demand a <em>fail-freeze</em> response, halting the robot until a human can intervene. We instead push toward <strong>fail-active</strong> operation, allowing robots to safely keep working under arbitrary actuation failures.</p>
+
+<p>DEFT does this by:</p>
+
+<ol>
+  <li><strong>Embodiment Conditioning</strong> – A structured vector encodes per-joint position and velocity limits induced by failures, conditioning the diffusion model on the robot’s current “embodiment.”</li>
+  <li><strong>Constraint Conditioning</strong> – A one-hot task encoding selects between <em>unconstrained</em> (e.g., pick-and-place) and <em>constrained</em> (e.g., pushing, wiping) motion primitives in a single unified model.</li>
+  <li><strong>Start–Goal Inpainting &amp; Output Clamping</strong> – Hard-enforces endpoint and joint-limit feasibility throughout the denoising process.</li>
+</ol>
+
+<h2 id="key-results"><strong>Key Results</strong></h2>
+<p>Across <strong>4.7k failure conditions</strong> and <strong>4.7M trajectories</strong> on a 7-DoF Franka Emika Panda:</p>
+
 <ul>
-  <li>Propagates the site.github namespace with repository metadata</li>
-  <li>Setting site variables :
-    <ul>
-      <li>site.title</li>
-      <li>site.description</li>
-      <li>site.url</li>
-      <li>site.baseurl</li>
-    </ul>
-  </li>
-  <li>Accessing the metadata - duh.</li>
-  <li>Generating edittable links.</li>
+  <li><strong>99.5%</strong> success on unconstrained motion vs. <strong>42.4%</strong> for RRT.</li>
+  <li><strong>46.4%</strong> success on constrained motion vs. <strong>30.9%</strong> for differential IK.</li>
+  <li><strong>Near-parity ID/OOD performance</strong> — DEFT generalizes zero-shot to failure conditions never seen during training.</li>
+  <li><strong>Perfect (10/10)</strong> real-world task completion on long-horizon <strong>drawer manipulation</strong> and <strong>whiteboard erasing</strong> under multi-joint failures, where classical optimization-based methods fail entirely.</li>
 </ul>
 
-<h2 id="additional-reading">Additional Reading</h2>
-<ul>
-  <li>If you’re recieving incorrect/missing data, you may need to perform a Github API<a href="https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md"> authentication</a>.</li>
-  <li>Go through this <a href="https://jekyll.github.io/github-metadata/" target="blank">README</a> for more details on the topic.</li>
-  <li><a href="https://github.com/jekyll/github-metadata/blob/master/docs/site.github.md">This page</a> highlights all the feilds you can access with github-metadata.
-<br /></li>
-</ul>
+<h2 id="why-it-matters"><strong>Why It Matters</strong></h2>
+<p>DEFT shows that a single conditioned diffusion policy can absorb the combinatorial explosion of possible failure modes and still produce feasible, multi-primitive plans on the fly — without policy switching, retraining, or hand-engineered recovery rules. This is a concrete step toward robots that <strong>don’t shut down when things go wrong</strong>, but creatively complete their tasks in space, in factories, and anywhere human rescue isn’t an option.</p>
 
-<h2 id="example-metadata">Example MetaData</h2>
-<ul>
-  <li>Host Name : github.com</li>
-  <li>URL : https://github.com/pages/ggb367</li>
-  <li>BaseURL : /pages/ggb367</li>
-  <li>Archived : false</li>
-  <li>
-    <p>Contributors :</p>
-
-    <ul>
-      <li>
-        <p>alshedivat</p>
-      </li>
-      <li>
-        <p>ggb367</p>
-      </li>
-      <li>
-        <p>samfearn</p>
-      </li>
-      <li>
-        <p>monkeywithacupcake</p>
-      </li>
-      <li>
-        <p>adunning</p>
-      </li>
-      <li>
-        <p>g-oikonomou</p>
-      </li>
-      <li>
-        <p>junghans</p>
-      </li>
-      <li>
-        <p>ziruizhuang</p>
-      </li>
-      <li>
-        <p>huyen-nguyen</p>
-      </li>
-      <li>
-        <p>mvdoc</p>
-      </li>
-      <li>
-        <p>swabhs</p>
-      </li>
-      <li>
-        <p>AbstractGeek</p>
-      </li>
-      <li>
-        <p>jasongfleischer</p>
-      </li>
-      <li>
-        <p>krrish94</p>
-      </li>
-      <li>
-        <p>mpmdean</p>
-      </li>
-      <li>
-        <p>kakodkar</p>
-      </li>
-      <li>
-        <p>sahirbhatnagar</p>
-      </li>
-      <li>
-        <p>shpark</p>
-      </li>
-      <li>
-        <p>yoonholee</p>
-      </li>
-      <li>
-        <p>zrqiao</p>
-      </li>
-      <li>
-        <p>jkmacc-LANL</p>
-      </li>
-      <li>
-        <p>zt-chen</p>
-      </li>
-    </ul>
-  </li>
-</ul>
+<p>Huge thanks to my co-authors <strong>Yaashia Gautam, Rahul Shetty, Anuj Pasricha, Marco M. Nicotra, and Alessandro Roncone</strong>, and to NASA’s Space Technology Graduate Research Opportunity program for supporting this work. See you in Vienna!</p>
 
   </article>
 
