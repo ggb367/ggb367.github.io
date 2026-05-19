@@ -1,0 +1,3 @@
+[submodule "cv-templates/Awesome-PhD-CV"]
+	path = cv-templates/Awesome-PhD-CV
+	url = git@github.com:LimHyungTae/Awesome-PhD-CV.git

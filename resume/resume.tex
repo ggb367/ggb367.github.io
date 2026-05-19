@@ -1,0 +1,237 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Gilberto G. Briscoe-Martinez — Industry Resume (Deedy Format)
+% Based on the Deedy Resume template (Debarghya Das, Apache 2.0)
+% via LimHyungTae/Awesome-PhD-CV submodule (see cv-templates/).
+%
+% Compile from the repository root with:
+%   make resume
+% or, from this directory, with:
+%   TEXINPUTS=.:../cv-templates/Awesome-PhD-CV/deedy-format: xelatex resume.tex
+%
+% Philosophy: project-driven, one page, ATS-aware. Tailor the
+% "Selected Projects" section to each application.
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{pifont}
+\newcommand{\githubstars}[1]{[{\faGithubSquare}\,\ding{72}\,\textbf{#1}]}
+
+% -----------------------------------------------------------------------------
+% Font weight overrides
+%
+% The Deedy class ships with Lato-Lig (Light) as the main font and
+% Raleway-ExtraLight for the sans family, which read as very thin on screen.
+% We bump both to medium-weight variants so the resume looks sharper while
+% keeping the original Deedy layout intact.
+%
+% Available Lato weights in the submodule:
+%   Lato-Hai (Hairline) / Lato-Lig (Light) / Lato-Reg (Regular)
+%   Lato-Bol (Bold)     / Lato-Bla (Black)
+% Available Raleway weights: Thin, ExtraLight, Light, Regular, Medium,
+%   SemiBold, Bold, ExtraBold, Heavy.
+% -----------------------------------------------------------------------------
+\setmainfont[
+  Path = fonts/lato/,
+  BoldItalicFont = Lato-BolIta,
+  BoldFont       = Lato-Bol,
+  ItalicFont     = Lato-RegIta,
+]{Lato-Reg}
+\setsansfont[
+  Scale   = MatchLowercase,
+  Mapping = tex-text,
+  Path    = fonts/raleway/,
+]{Raleway-Medium}
+
+% Bump the section heading + name-section weights so they pop more.
+% (Mirrors the original macros from deedy-resume-openfont.cls but with
+% heavier Lato/Raleway variants.)
+\usepackage{titlesec}
+
+% Section headings (\section{...}) -- use Bold Lato instead of Light.
+\titleformat{\section}{
+  \color{headings}\scshape\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{14pt}{17pt}\selectfont \raggedright\uppercase
+}{}{0em}{}
+
+% Name section -- bigger name than the original Deedy default (20pt -> 32pt),
+% Light first name + Bold last name, contact line a touch larger,
+% and a faint divider rule underneath.
+\renewcommand{\namesection}[3]{
+  \centering{
+    \fontsize{32pt}{36pt}\selectfont
+    \fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #1
+    \fontspec[Path = fonts/lato/]{Lato-Bol}\selectfont #2
+  } \\[4pt]
+  \centering{
+    \color{headings}\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10.5pt}{12pt}\selectfont #3}
+  \noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}}
+  \vspace{-12pt}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+% "Last updated" in the bottom-left footer (small Raleway-ExtraLight),
+% replacing Deedy's default top-right \lastupdated textblock, which
+% collided with the enlarged name.
+\fancyfoot[L]{%
+  \color{date}\fontspec[Path = fonts/raleway/]{Raleway-ExtraLight}\fontsize{8pt}{10pt}\selectfont
+  Last updated \today%
+}
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     TITLE / CONTACT LINE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Gilberto G.}{Briscoe-Martinez}{
+  \urlstyle{same}\href{https://gilberto.martinez.phd}{gilberto.martinez.phd} |
+  \href{mailto:gilberto.briscoe-martinez@colorado.edu}{gilberto.briscoe-martinez@colorado.edu} |
+  \href{https://www.linkedin.com/in/gbmartinez}{LinkedIn} |
+  \href{https://github.com/ggb367}{GitHub}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COLUMN ONE (LEFT, 33%)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{0.33\textwidth}
+
+%--------------- SKILLS ---------------
+\section{Skills}
+\subsection{Programming}
+\location{Proficient:}
+Python \textbullet{} C++ \textbullet{} ROS/ROS2 \\
+\location{Experienced:}
+PyTorch \textbullet{} CUDA \textbullet{} CMake \\
+NumPy \textbullet{} OpenCV \textbullet{} \LaTeX
+\sectionsep
+
+\subsection{Robotics / AI}
+Diffusion Policies \textbullet{} Imitation Learning \\
+Motion Planning \textbullet{} Trajectory Opt. \\
+Non-Prehensile Manipulation \\
+Contact-Rich Control \\
+Multi-Robot Coordination \\
+Computer Vision
+\sectionsep
+
+\subsection{Platforms}
+Franka Panda \textbullet{} 7-DoF Arms \\
+NVIDIA Jetson / Orin \\
+Industrial Pick-and-Place
+\sectionsep
+
+%--------------- LINKS ---------------
+\section{Links}
+Website:// \href{https://gilberto.martinez.phd}{\bf gilberto.martinez.phd} \\
+GitHub:// \href{https://github.com/ggb367}{\bf ggb367} \\
+LinkedIn:// \href{https://www.linkedin.com/in/gbmartinez}{\bf gbmartinez} \\
+Scholar:// \href{https://scholar.google.com/citations?user=6MNXSfsAAAAJ}{\bf G.\ Briscoe-Martinez}
+\sectionsep
+
+%--------------- EDUCATION ---------------
+\section{Education}
+
+\subsection{University of Colorado Boulder}
+\descript{Ph.D.\ in Computer Science}
+\location{Aug.\ 2021 -- May 2027 (exp.) | Boulder, CO}
+HIRO Group \\
+Advisor: Prof.\ A.\ Roncone
+\sectionsep
+
+\subsection{University of Texas at Austin}
+\descript{B.S.\ in Aerospace Engineering}
+\location{Aug.\ 2017 -- May 2021 | Austin, TX}
+Human Centered Robotics Lab \\
+(2018--2021)
+\sectionsep
+
+\end{minipage}
+\hfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COLUMN TWO (RIGHT, 66%)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{0.66\textwidth}
+
+%--------------- EXPERIENCE ---------------
+\section{Experience}
+
+\runsubsection{HIRO Group, CU Boulder}
+\descript{| PhD Researcher \& NASA NSTGRO Fellow}
+\location{Aug.\ 2021 -- Present | Boulder, CO}
+\vspace{0.3cm}
+\begin{tightemize}
+\item Built \textbf{DEFT}, a diffusion policy conditioned on embodiment \& task that recovers from arbitrary joint failures on a 7-DoF Franka Panda: \textbf{99.5\%} success on unconstrained motion (vs.\ 42.4\% RRT) and \textbf{46.4\%} on constrained motion (vs.\ 30.9\% diff.\ IK) across \textbf{4.7M} trajectories / \textbf{4.7k} failure conditions (\textit{ICRA'26}).
+\item Achieved \textbf{10/10} real-world task completion (drawer manipulation, whiteboard erasing) under multi-joint failures where classical trajectory optimization fails entirely.
+\item Showed pushing/poking primitives expand a failure-constrained workspace by up to \textbf{79\%} and recover \textbf{88.9\%} task success when the end-effector is unusable (\textit{IROS'24}).
+\item Co-authored CERG (\textit{IFAC'26}) with the ROCC Lab; mentored junior PhD and undergraduate researchers.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Plus One Robotics}
+\descript{| Robotics AI/ML Researcher (Summer Intern)}
+\location{Jun.\ 2025 -- Aug.\ 2025 | Boulder, CO}
+\begin{tightemize}
+\item Built vision-driven recovery for intelligent package sorting: detect failed picks, formulate recovery plans, and re-engage without operator intervention.
+\item Coordinated a fleet of robotic arms and conveyor systems to keep warehouse throughput high under partial failures.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Johns Hopkins APL}
+\descript{| Robotics Engineer (Summer Intern)}
+\location{May 2021 -- Aug.\ 2021 | Laurel, MD}
+\begin{tightemize}
+\item Robotics engineering on APL programs combining hardware integration, controls, and applied research.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Human Centered Robotics Lab, UT Austin}
+\descript{| Undergraduate Researcher}
+\location{Jan.\ 2018 -- May 2021 | Austin, TX}
+\begin{tightemize}
+\item Multi-year undergraduate research role (Prof.\ Luis Sentis) spanning perception, planning, and task execution for service robots.
+\item Member of the \textbf{UT Austin Villa @ Home} RoboCup team; co-authored the AAAI AI-HRI 2019 team report.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{METECS}
+\descript{| Robotics Software Engineer (Summer Intern)}
+\location{May 2020 -- Aug.\ 2020 | Houston, TX}
+\begin{tightemize}
+\item Robotics software for space-station / aerospace applications: multibody dynamics, controls, simulation, and HW/SW integration.
+\end{tightemize}
+\sectionsep
+
+%--------------- SELECTED PROJECTS ---------------
+% NOTE: Customize this section for each application.
+% Manipulation / autonomy team -> DEFT + non-prehensile.
+% Controls / safety-critical    -> CERG.
+% Industry / warehouse robotics -> Plus One sorting.
+\section{Selected Projects}
+\vspace{0.3cm}
+\begin{tightemize}
+\item \textbf{DEFT --- Embodiment-aware Diffusion Policy} -- Conditioned on per-joint position/velocity limits and task type; used start--goal inpainting + output clamping to hard-enforce endpoint feasibility. Generalized to 4.7k unseen failure conditions on hardware (\textit{ICRA 2026}).
+\item \textbf{Non-Prehensile Failure Recovery} -- Modeled failure-constrained workspaces; pre-computed pushing/poking primitives selected via a sim-in-the-loop planner. 88.9\% task success without a working end-effector (\textit{IROS 2024}).
+\item \textbf{CERG --- Compliant Explicit Reference Governor} -- Online reference modulation for safe contact-rich manipulation (\textit{IFAC 2026}).
+\end{tightemize}
+\sectionsep
+
+%--------------- PUBLICATIONS & PATENTS ---------------
+\section{Publications \& Patents}
+5\texttt{+} papers (peer-reviewed \& preprint): IEEE ICRA, IEEE/RSJ IROS, IFAC, AAAI AI-HRI, arXiv. \\
+Recent preprint: \textbf{PBD-R} -- Physically Accurate Rigid-Body Dynamics in Particle-Based Simulation (\href{https://arxiv.org/abs/2603.14634}{arXiv:2603.14634}). \\
+Issued U.S.\ Patent: \href{https://patents.google.com/patent/US10339827B2}{\textbf{US 10,339,827}}. \\
+Full list: \href{https://scholar.google.com/citations?user=6MNXSfsAAAAJ}{Google Scholar}.
+\sectionsep
+
+%--------------- AWARDS ---------------
+\section{Awards}
+\begin{tabular}{rl}
+2022\,--\,/ & NASA NSTGRO Fellowship \\
+            & (Grant 80NSSC22K1211) \\
+\end{tabular}
+\sectionsep
+
+\end{minipage}
+\end{document}

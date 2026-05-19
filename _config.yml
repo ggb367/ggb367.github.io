@@ -113,7 +113,7 @@ kramdown:
 
 # Includes & excludes
 include: ['_pages']
-exclude: [vendor]
+exclude: [vendor, cv, resume, cv-templates, Makefile]
 
 # Plug-ins
 plugins:

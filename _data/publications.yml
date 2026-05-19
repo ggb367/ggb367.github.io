@@ -1,3 +1,12 @@
+- title: "Physically Accurate Rigid-Body Dynamics in Particle-Based Simulation"
+  authors: Ava Abderezaei, Nataliya Nechyporenko, Joseph Miceli, Gilberto Briscoe-Martinez, and Alessandro Roncone
+  year: 2026
+  venue: arXiv preprint
+  where: <a href="https://arxiv.org/abs/2603.14634">arXiv:2603.14634</a>, April 2026
+  pdf: "2026_Abderezaei_PBD-R"
+  description: "Introduces <b>PBD-R</b>, a revised Position-Based Dynamics formulation with a novel momentum-conservation constraint and modified velocity update for physically accurate rigid-body simulation, plus a solver-agnostic 7-test physics benchmark. Code: <a href=\"https://github.com/HIRO-group/newton\">HIRO-group/newton</a>."
+  selected: false
+
 - title: "Moving On, Even When You're Broken: Fail-Active Trajectory Generation via Diffusion Policies Conditioned on Embodiment and Task"
   authors: Gilberto Briscoe-Martinez, Yaashia Gautam, Rahul Shetty, Anuj Pasricha, Marco M. Nicotra, and Alessandro Roncone
   year: 2026

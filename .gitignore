@@ -7,3 +7,22 @@ _site
 .tweet-cache/
 Gemfile.lock
 vendor
+
+# LaTeX build artifacts for cv/ and resume/
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.toc
+cv/*.fls
+cv/*.fdb_latexmk
+cv/*.synctex.gz
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.toc
+resume/*.fls
+resume/*.fdb_latexmk
+resume/*.synctex.gz
+# Symlink created by `make resume` so the Deedy class can resolve its
+# relative `Path = fonts/...` lookups; created on demand from the submodule.
+resume/fonts

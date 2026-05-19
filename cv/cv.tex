@@ -1,0 +1,98 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Gilberto G. Briscoe-Martinez — Academic CV
+% Based on Awesome-CV (Claud D. Park, CC BY-SA 4.0)
+% via LimHyungTae/Awesome-PhD-CV submodule (see cv-templates/).
+%
+% Compile from the repository root with:
+%   make cv
+% or, from this directory, with:
+%   TEXINPUTS=.:../cv-templates/Awesome-PhD-CV/research-cv: xelatex cv.tex
+
+% Bullet-style numbering for any inline bibliography items
+\makeatletter
+\renewcommand\@biblabel[1]{\textbullet}
+\makeatother
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+\documentclass[11pt, letterpaper]{awesome-cv}
+
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+\usepackage[font=footnotesize]{subcaption}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{cite}
+\usepackage{wrapfig}
+\usepackage{xspace}
+\usepackage{wasysym}
+\usepackage{booktabs}
+\usepackage{fontspec}
+\usepackage{pifont}
+\captionsetup[figure]{labelformat={default},labelsep=period,name={Fig.}}
+
+\Crefname{section}{Sec.}{Secs.}
+\Crefname{figure}{Fig.}{Figs.}
+\Crefname{table}{Table}{Tables}
+\crefname{equation}{}{}
+\Crefname{equation}{}{}
+
+\definecolor{justblue}{HTML}{0000F1}
+\definecolor{Violet}{rgb}{0.56, 0.0, 0.85}
+\definecolor{BurntOrange}{rgb}{0.9, 0.45, 0.0}
+\definecolor{Cerulean}{rgb}{0.0, 0.48, 0.90}
+
+\newcommand{\githubstars}[1]{[{\faGithubSquare}\,\ding{72} \textbf{#1}]}
+\newcommand{\paperif}[1]{\textcolor{justblue}{[IF: \textbf{#1}]}}
+\newcommand{\papercitation}[1]{\textcolor{justblue}{[Citations: \textbf{#1}]}}
+
+% CU Boulder gold/black accent
+\definecolor{awesome}{HTML}{CFB87C}
+\setbool{acvSectionColorHighlight}{false}
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+%-------------------------------------------------------------------------------
+% PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+\name{Gilberto G.}{Briscoe-Martinez}
+\position{PhD Candidate, Computer Science{\enskip\cdotp\enskip}NASA Space Technology Graduate Researcher}
+\address{Boulder, CO, USA}
+
+\email{gilberto.briscoe-martinez@colorado.edu}
+\homepage{gilberto.martinez.phd}
+\github{ggb367}
+\linkedin{gbmartinez}
+\googlescholar{6MNXSfsAAAAJ}{Google Scholar}
+\orcid{0000-0002-6107-1430}
+
+\newif\ifshowcontent
+\showcontenttrue
+
+% \quote{``Robots that find a way --- not robots that stop.''}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makecvheader
+\makecvfooter
+  {\today}
+  {Gilberto G.\ Briscoe-Martinez~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+%-------------------------------------------------------------------------------
+% CONTENT
+%   Section order (fixed): Education, Publications, Awards,
+%                          Service, Research Experience, Professional Experience
+%-------------------------------------------------------------------------------
+\input{sections/education.tex}
+\input{sections/publications.tex}
+\input{sections/awards.tex}
+\input{sections/service.tex}
+\input{sections/research_experience.tex}
+\input{sections/professional_experience.tex}
+
+\end{document}

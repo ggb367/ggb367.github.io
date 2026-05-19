@@ -1,16 +1,17 @@
 ---
 layout: page
 permalink: /resume/
-title: Resume
+title: CV/Resume
 nav: true
-pdf_path: /assets/pdf/resume_1_page_sp25.pdf
+cv_path: /assets/pdf/cv.pdf
+resume_path: /assets/pdf/resume.pdf
 ---
 
-<section id="resume-section">
+<section id="cv-resume-section-wrapper">
     <div class="container">
-        <div id="resume-container">
-            {% include resume.html pdf_path=page.pdf_path %}
-        </div>
+        {% include cv_resume.html
+                   cv_path=page.cv_path
+                   resume_path=page.resume_path
+                   default="resume" %}
     </div>
 </section>
-
