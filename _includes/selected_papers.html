@@ -6,7 +6,7 @@
   {% else %} {% assign year = include.year %}
   {% endif %}
 
-  {% if year == item.year %}
+  {% if year == item.year and item.selected %}
   <div class="row cv-item pub {% if item.award %}award{% endif %}">
     <div class="col-md-3">
       <h4 class="inlineifprinted">{{item.venue}}</h4>

@@ -1,12 +1,29 @@
+- title: "Moving On, Even When You're Broken: Fail-Active Trajectory Generation via Diffusion Policies Conditioned on Embodiment and Task"
+  authors: Gilberto Briscoe-Martinez, Yaashia Gautam, Rahul Shetty, Anuj Pasricha, Marco M. Nicotra, and Alessandro Roncone
+  year: 2026
+  venue: IEEE International Conference on Robotics and Automation [ICRA]
+  where: Vienna, Austria, June 2026
+  pdf: "2026_Briscoe-Martinez_ICRA_DEFT"
+  selected: true
+- title: "Compliant Explicit Reference Governor for Contact Friendly Robotic Manipulators"
+  authors: Yaashia Gautam, Gilberto Briscoe-Martinez, Adhitya Mohan, Nataliya Nechyporenko, Alessandro Roncone, and Marco M. Nicotra
+  year: 2026
+  venue: IFAC World Congress
+  where: Busan, South Korea, August 2026
+  pdf: "2026_Gautam_IFAC_CERG"
+  description: "<b>Co-first author</b> (equal contribution with Yaashia Gautam)."
+  selected: true
 - title: "Exploring How Non-Prehensile Manipulation Expands Capability in Robots Experiencing Multi-Joint Failure"
   authors: Gilberto Briscoe-Martinez, Anuj Pasricha, Ava Abderezaei, Santosh Chaganti, Sarath Chandra Vajrala, Sri Kanth Popuri, and Alessandro Roncone
   year: 2024
   venue: IEEE/RSJ International Conference on Intelligent Robots and Systems [IROS]
   where: Abu Dhabi, UAE, October 14-18
   pdf: "2024_Martinez_IROS_failure_recovery"
+  selected: true
 - title: "Solving Service Robot Tasks: UT Austin Villa@Home 2019 Team Report"
   authors: Rishi Shah, Yuqian Jiang, Haresh Karnan, Gilberto Briscoe-Martinez, Dominick Mulder, Ryan Gupta, Rachel Schlossman, Marika Murphy, Justin Hart, Luis Sentis, and Peter Stone
   year: 2019
   venue: AAAI Fall Symposium on Artificial Intelligence and Human-Robot Interaction for Service Robots in Human Environments (AI-HRI 2019)
   where: Arlington, VA, USA
   pdf: "2019_Shah_AIHRI_UTAustinVilla"
+  selected: false

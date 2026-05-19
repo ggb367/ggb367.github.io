@@ -30,7 +30,7 @@ layout: default
     </div>
 
     {% if page.selected_papers %}
-      {% include selected_papers.html year=2024 publications=site.data.publications%}
+      {% include selected_papers.html year="all" publications=site.data.publications%}
     {% endif %}
 
     {% if page.news %}

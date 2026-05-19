@@ -1,15 +1,27 @@
 /*******************************************************************************
  * Themes
+ *
+ * Modern, colorblind-safe palette (Okabe-Ito).
+ *   Primary  : deep blue       (#0072B2)
+ *   Accent   : vermillion pop  (#D55E00)
+ *   Secondary: bluish green    (#009E73)
  ******************************************************************************/
- 
+
 :root {
   --global-bg-color: #{$white-color};
   --global-text-color: #{$black-color};
-  --global-theme-color: #{$purple-color};
-  --global-hover-color: #{$light-purple-color};
+  --global-text-color-light: #{$grey-color};
+  --global-theme-color: #{$okabe-blue};
+  --global-hover-color: #{$okabe-vermillion};
+  --global-accent-color: #{$okabe-vermillion};
+  --global-accent-soft: #{rgba(213, 94, 0, 0.12)};
+  --global-secondary-color: #{$okabe-green};
+  --global-divider-color: #{$grey-color-light};
+  --global-card-bg-color: #{$true-white};
+  --global-card-shadow: 0 1px 2px rgba(17, 24, 39, 0.04), 0 4px 12px rgba(17, 24, 39, 0.06);
   --global-footer-bg-color: #{$grey-color-dark};
   --global-footer-text-color: #{$grey-color-light};
-  --global-footer-link-color: #{$white-color};
+  --global-footer-link-color: #{$okabe-sky-blue};
   --global-icon-color: #{$grey-color-dark};
 
   .fa-sun {
@@ -23,13 +35,20 @@
 }
 
 html[data-theme='dark'] {
-  --global-bg-color: #{$grey-color-dark};
-  --global-text-color: #{$grey-color-light};
-  --global-theme-color: #{$cyan-color};
-  --global-hover-color: #{$light-cyan-color};
-  --global-footer-bg-color: #{$grey-color-light};
-  --global-footer-text-color: #{$grey-color-dark};
-  --global-footer-link-color: #{$black-color};
+  --global-bg-color: #0f1115; // modern deep charcoal
+  --global-text-color: #e8eaed;
+  --global-text-color-light: #9ca3af;
+  --global-theme-color: #{$okabe-sky-blue};
+  --global-hover-color: #{$okabe-orange};
+  --global-accent-color: #{$okabe-orange};
+  --global-accent-soft: #{rgba(230, 159, 0, 0.15)};
+  --global-secondary-color: #{$okabe-green};
+  --global-divider-color: #2a2f3a;
+  --global-card-bg-color: #1a1d24;
+  --global-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4);
+  --global-footer-bg-color: #1a1d24;
+  --global-footer-text-color: #{$grey-color-light};
+  --global-footer-link-color: #{$okabe-sky-blue};
   --global-icon-color: navajowhite;
 
   .fa-sun {

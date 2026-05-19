@@ -6,27 +6,43 @@
 
 
 // Colors
-$red-color:           #FF3636 !default;
-$red-color-dark:      #B71C1C !default;
-$orange-color:        #F29105 !default;
-$blue-color:          #0076df !default;
-$blue-color-dark:     #00369f !default;
-$cyan-color:          #2698BA !default;
-$light-cyan-color:    lighten($cyan-color, 25%);
-$green-color:         #00ab37 !default;
-$green-color-lime:    #B7D12A !default;
-$green-color-dark:    #009f06 !default;
-$green-color-light:   #ddffdd !default;
-$green-color-bright:  #11D68B !default;
-$purple-color:        #B509AC !default;
-$light-purple-color:  lighten($purple-color, 25%);
-$pink-color:          #f92080 !default;
-$pink-color-light:    #ffdddd !default;
-$yellow-color:        #efcc00 !default;
+// Modern, colorblind-safe palette based on the Okabe-Ito scheme
+// (Okabe & Ito 2008; recommended for accessible scientific visualization)
 
-$grey-color:          #828282 !default;
-$grey-color-light:    lighten($grey-color, 40%);
-$grey-color-dark:     darken($grey-color, 25%);
+// Okabe-Ito palette
+$okabe-orange:        #E69F00 !default; // warm amber
+$okabe-sky-blue:      #56B4E9 !default; // bright sky
+$okabe-green:         #009E73 !default; // bluish green
+$okabe-yellow:        #F0E442 !default;
+$okabe-blue:          #0072B2 !default; // deep blue (primary)
+$okabe-vermillion:    #D55E00 !default; // vermillion pop
+$okabe-purple:        #CC79A7 !default; // reddish purple
 
-$white-color: #ffffff !default;
-$black-color: #000000 !default;
+// Aliases for legacy theme usage
+$red-color:           $okabe-vermillion !default;
+$red-color-dark:      darken($okabe-vermillion, 10%) !default;
+$orange-color:        $okabe-orange !default;
+$blue-color:          $okabe-blue !default;
+$blue-color-dark:     darken($okabe-blue, 8%) !default;
+$cyan-color:          $okabe-sky-blue !default;
+$light-cyan-color:    lighten($okabe-sky-blue, 15%);
+$green-color:         $okabe-green !default;
+$green-color-lime:    $okabe-yellow !default;
+$green-color-dark:    darken($okabe-green, 8%) !default;
+$green-color-light:   lighten($okabe-green, 50%) !default;
+$green-color-bright:  $okabe-green !default;
+$purple-color:        $okabe-purple !default;
+$light-purple-color:  lighten($okabe-purple, 15%);
+$pink-color:          $okabe-vermillion !default;
+$pink-color-light:    lighten($okabe-vermillion, 45%) !default;
+$yellow-color:        $okabe-yellow !default;
+
+// Modern neutrals
+$grey-color:          #6b7280 !default; // slate-500
+$grey-color-light:    #e5e7eb !default; // slate-200
+$grey-color-dark:     #1f2937 !default; // slate-800
+
+$white-color:         #fafbfc !default; // soft off-white
+$black-color:         #111827 !default; // soft near-black (slate-900)
+$true-white:          #ffffff !default;
+$true-black:          #000000 !default;
