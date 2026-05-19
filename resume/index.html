@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Gilberto G. Briscoe-Martinez | Resume</title>
+<title>Gilberto G. Briscoe-Martinez | CV/Resume</title>
 <meta name="description" content="PhD Student in the HIRO Group at the University of Colorado Boulder | NASA Space Technology Graduate Researcher
 ">
 
@@ -17,7 +17,7 @@
 <meta property="og:type" content="object" />
 <meta property="og:title" content="" />
 <meta property="og:url" content="https://gilberto.martinez.phd/resume/" />
-<meta property="og:description" content="Resume" />
+<meta property="og:description" content="CV/Resume" />
 <meta property="og:image" content="" />
 
 
@@ -113,22 +113,22 @@
           
           
           
-          
-          
-          <li class="nav-item ">
-              <a class="nav-link" href="/publications/">
-                Publications
+          <li class="nav-item active">
+              <a class="nav-link" href="/resume/">
+                CV/Resume
+                
+                <span class="sr-only">(current)</span>
                 
               </a>
           </li>
           
           
           
-          <li class="nav-item active">
-              <a class="nav-link" href="/resume/">
-                Resume
-                
-                <span class="sr-only">(current)</span>
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                Publications
                 
               </a>
           </li>
@@ -158,34 +158,235 @@
       <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Resume</h1>
+    <h1 class="post-title">CV/Resume</h1>
     <p class="post-description"></p>
   </header>
 
   <article>
-    <section id="resume-section">
+    <section id="cv-resume-section-wrapper">
     <div class="container">
-        <div id="resume-container">
-            <div class="resume-embed">
-    <iframe src="/assets/pdf/resume_1_page_sp25.pdf" title="Resume PDF" style="width: 100%; height: 80vh; border: none;"></iframe>
-    <div class="download-link" style="text-align: center; margin-top: 20px;">
-        <p>If you can't view the resume, download it here:</p>
-        <a href="/assets/pdf/resume_1_page_sp25.pdf" target="_blank" download="" style="
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        ">Download Resume (PDF)</a>
-    </div>
-</div>
+        
 
-        </div>
+
+
+<section id="cv-resume-section">
+  <div class="row">
+
+    <!-- PDF viewer (main area; appears second on mobile, first on >=md) -->
+    <div class="col-md-9 order-2 order-md-1">
+      <div class="cv-resume-viewer">
+        <iframe id="cv-resume-iframe" src="/assets/pdf/resume.pdf" title="CV / Resume PDF">
+        </iframe>
+      </div>
+
+      <div class="cv-resume-actions">
+        <a id="cv-resume-download" class="cv-resume-download-btn" href="/assets/pdf/resume.pdf" target="_blank" download="">
+          <i class="fas fa-download"></i>
+          Download <span id="cv-resume-download-label">Resume</span> (PDF)
+        </a>
+        <a id="cv-resume-open" class="cv-resume-open-btn" href="/assets/pdf/resume.pdf" target="_blank" rel="noopener">
+          <i class="fas fa-external-link-alt"></i>
+          Open in new tab
+        </a>
+      </div>
     </div>
+
+    <!-- Toggle panel (right on >=md, top on mobile) -->
+    <div class="col-md-3 order-1 order-md-2 mb-3 mb-md-0">
+      <div class="cv-resume-toggle" role="tablist" aria-label="Choose document">
+        <button type="button" class="cv-resume-tab active" data-doc="resume" data-pdf="/assets/pdf/resume.pdf" data-label="Resume" aria-pressed="true">
+          <span class="cv-resume-tab-title">Resume</span>
+          <span class="cv-resume-tab-sub">1-page &middot; industry</span>
+        </button>
+        <button type="button" class="cv-resume-tab " data-doc="cv" data-pdf="/assets/pdf/cv.pdf" data-label="CV" aria-pressed="false">
+          <span class="cv-resume-tab-title">CV</span>
+          <span class="cv-resume-tab-sub">Multi-page &middot; academic</span>
+        </button>
+      </div>
+
+      <p class="cv-resume-current">
+        Viewing the <strong id="cv-resume-current-label">Resume</strong>.
+      </p>
+    </div>
+
+  </div>
 </section>
 
+<style>
+  /* ----- Viewer card ----- */
+  #cv-resume-section .cv-resume-viewer {
+    background: var(--global-card-bg-color);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    box-shadow: var(--global-card-shadow);
+    overflow: hidden;
+    padding: 6px;
+  }
+  #cv-resume-section #cv-resume-iframe {
+    display: block;
+    width: 100%;
+    height: 80vh;
+    border: none;
+    border-radius: 4px;
+    background: var(--global-bg-color);
+  }
+
+  /* ----- Action buttons under the viewer ----- */
+  #cv-resume-section .cv-resume-actions {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  #cv-resume-section .cv-resume-download-btn,
+  #cv-resume-section .cv-resume-open-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+  }
+  #cv-resume-section .cv-resume-download-btn {
+    background: var(--global-theme-color);
+    color: #fff;
+  }
+  #cv-resume-section .cv-resume-download-btn:hover,
+  #cv-resume-section .cv-resume-download-btn:focus {
+    background: var(--global-accent-color);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+  #cv-resume-section .cv-resume-open-btn {
+    background: transparent;
+    color: var(--global-text-color);
+    border-color: var(--global-divider-color);
+  }
+  #cv-resume-section .cv-resume-open-btn:hover,
+  #cv-resume-section .cv-resume-open-btn:focus {
+    background: var(--global-card-bg-color);
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    transform: translateY(-1px);
+  }
+
+  /* ----- Toggle panel ----- */
+  #cv-resume-section .cv-resume-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  #cv-resume-section .cv-resume-tab {
+    text-align: left;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--global-divider-color);
+    background: var(--global-card-bg-color);
+    color: var(--global-text-color);
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    font: inherit;
+  }
+  #cv-resume-section .cv-resume-tab:hover {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+  }
+  #cv-resume-section .cv-resume-tab:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--global-accent-soft);
+  }
+  #cv-resume-section .cv-resume-tab.active {
+    background: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    color: #fff;
+    box-shadow: var(--global-card-shadow);
+  }
+  #cv-resume-section .cv-resume-tab.active:hover {
+    /* Keep colors consistent when hovering the already-active tab */
+    color: #fff;
+  }
+  #cv-resume-section .cv-resume-tab-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  #cv-resume-section .cv-resume-tab-sub {
+    display: block;
+    font-size: 0.82rem;
+    margin-top: 3px;
+    color: var(--global-text-color-light);
+  }
+  #cv-resume-section .cv-resume-tab.active .cv-resume-tab-sub {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  #cv-resume-section .cv-resume-current {
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+  }
+  #cv-resume-section .cv-resume-current strong {
+    color: var(--global-text-color);
+  }
+
+  /* On narrow screens, drop the iframe height a bit so the page isn't all one frame */
+  @media (max-width: 575.98px) {
+    #cv-resume-section #cv-resume-iframe { height: 70vh; }
+  }
+</style>
+
+<script>
+  (function () {
+    var buttons  = document.querySelectorAll('#cv-resume-section .cv-resume-tab');
+    var iframe   = document.getElementById('cv-resume-iframe');
+    var download = document.getElementById('cv-resume-download');
+    var openBtn  = document.getElementById('cv-resume-open');
+    var dlLabel  = document.getElementById('cv-resume-download-label');
+    var curLabel = document.getElementById('cv-resume-current-label');
+
+    function selectDoc(doc) {
+      var match = null;
+      buttons.forEach(function (b) {
+        var isMatch = b.getAttribute('data-doc') === doc;
+        b.classList.toggle('active', isMatch);
+        b.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
+        if (isMatch) match = b;
+      });
+      if (!match) return;
+      var pdf = match.getAttribute('data-pdf');
+      var label = match.getAttribute('data-label');
+      iframe.src = pdf;
+      download.href = pdf;
+      openBtn.href = pdf;
+      dlLabel.textContent = label;
+      curLabel.textContent = label;
+      if (window.location.hash.replace('#', '') !== doc) {
+        history.replaceState(null, '', '#' + doc);
+      }
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        selectDoc(btn.getAttribute('data-doc'));
+      });
+    });
+
+    var initial = window.location.hash.replace('#', '');
+    if (initial === 'cv' || initial === 'resume') {
+      selectDoc(initial);
+    }
+  })();
+</script>
+
+    </div>
+</section>
 
   </article>
 
