@@ -1,9 +1,10 @@
-$(document).ready(function() {
-    $('a.abstract').click(function() {
-        $(this).parent().parent().find(".abstract.hidden").toggleClass('open');
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("a.abstract, a.bibtex").forEach(function(link) {
+        var target = link.classList.contains("abstract") ? ".abstract.hidden" : ".bibtex.hidden";
+        link.addEventListener("click", function() {
+            link.parentElement.parentElement.querySelectorAll(target).forEach(function(el) {
+                el.classList.toggle("open");
+            });
+        });
     });
-    $('a.bibtex').click(function() {
-        $(this).parent().parent().find(".bibtex.hidden").toggleClass('open');
-    });
-    $('.navbar-nav').find('a').removeClass('waves-effect waves-light');
 });

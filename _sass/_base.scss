@@ -630,3 +630,18 @@ html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
+
+// Material shadows (replaces the classes previously provided by MDBootstrap)
+.z-depth-0 {
+  box-shadow: none !important;
+}
+.z-depth-1 {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.hoverable {
+  transition: box-shadow 0.55s;
+}
+.hoverable:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: box-shadow 0.45s;
+}
