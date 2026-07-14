@@ -276,7 +276,7 @@ footer.fixed-bottom {
   }
 }
 
-footer.sticky-bottom {
+footer.site-footer {
   border-top: 1px solid $grey-color-light;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -629,6 +629,13 @@ html.transition *:before,
 html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
+}
+
+// Bootstrap 5 gives tables an opaque background and forced text color;
+// restore the transparent, inherited look the theme was designed around.
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--global-text-color);
 }
 
 // Material shadows (replaces the classes previously provided by MDBootstrap)
