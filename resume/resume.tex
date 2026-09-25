@@ -9,8 +9,21 @@
 % or, from this directory, with:
 %   TEXINPUTS=.:../cv-templates/Awesome-PhD-CV/deedy-format: xelatex resume.tex
 %
-% Philosophy: project-driven, one page, ATS-aware. Tailor the
-% "Selected Projects" section to each application.
+% Philosophy: one page, evidence only. The cover letter carries the
+% narrative; the resume carries the numbers, venues, and systems.
+%
+% Bullet pattern: [bold plain-language catch] (venue) — what it does, in
+% terms an industrial-robotics reader knows: numbers. No research jargon
+% in the catch; 2–3 lines max; no terminal periods.
+%
+% Search for "TODO" before sending: those are places where a number or
+% a full title would strengthen a claim and only you know the value.
+%
+% Layout note: the class's \namesection leaves \centering active at top
+% level, so anything placed outside the two minipages will be centered
+% with a stretched last line. Keep all body content inside the minipages.
+% Dates use a literal en dash (–) because the class's \location and
+% \setmainfont lack Mapping=tex-text, so "--" prints as two hyphens.
 
 \documentclass[]{deedy-resume-openfont}
 \usepackage{fancyhdr}
@@ -89,45 +102,34 @@
   \urlstyle{same}\href{https://gilberto.martinez.phd}{gilberto.martinez.phd} |
   \href{mailto:gilberto.briscoe-martinez@colorado.edu}{gilberto.briscoe-martinez@colorado.edu} |
   \href{https://www.linkedin.com/in/gbmartinez}{LinkedIn} |
-  \href{https://github.com/ggb367}{GitHub}
+  \href{https://github.com/ggb367}{GitHub} |
+  \href{https://scholar.google.com/citations?user=6MNXSfsAAAAJ}{Scholar}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     COLUMN ONE (LEFT, 33%)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{minipage}[t]{0.33\textwidth}
+\raggedright  % comma-separated skill lists wrap without justification stretch or hyphenation
 
 %--------------- SKILLS ---------------
+% ML first: this is what the reader is screening for.
 \section{Skills}
-\subsection{Programming}
-\location{Proficient:}
-Python \textbullet{} C++ \textbullet{} ROS/ROS2 \\
-\location{Experienced:}
-PyTorch \textbullet{} CUDA \textbullet{} CMake \\
-NumPy \textbullet{} OpenCV \textbullet{} \LaTeX
+\subsection{Machine Learning}
+PyTorch, diffusion policies, imitation learning, ACT, VLA and VLM fine-tuning (LoRA), graph encoders (GAT, HGT), evaluation and ablation design, CUDA, NumPy
 \sectionsep
 
-\subsection{Robotics / AI}
-Diffusion Policies \textbullet{} Imitation Learning \\
-Motion Planning \textbullet{} Trajectory Opt. \\
-Non-Prehensile Manipulation \\
-Contact-Rich Control \\
-Multi-Robot Coordination \\
-Computer Vision
+\subsection{Robotics}
+Motion planning, trajectory optimization, compliant and contact-rich control, non-prehensile manipulation, multi-robot coordination, ROS 2, Isaac Sim, OpenCV
+\sectionsep
+
+\subsection{Software}
+Python, C++, CMake
+% TODO: add Docker, AWS, or GCP here if you have used them; the JD lists them.
 \sectionsep
 
 \subsection{Platforms}
-Franka Panda \textbullet{} 7-DoF Arms \\
-NVIDIA Jetson / Orin \\
-Industrial Pick-and-Place
-\sectionsep
-
-%--------------- LINKS ---------------
-\section{Links}
-Website:// \href{https://gilberto.martinez.phd}{\bf gilberto.martinez.phd} \\
-GitHub:// \href{https://github.com/ggb367}{\bf ggb367} \\
-LinkedIn:// \href{https://www.linkedin.com/in/gbmartinez}{\bf gbmartinez} \\
-Scholar:// \href{https://scholar.google.com/citations?user=6MNXSfsAAAAJ}{\bf G.\ Briscoe-Martinez}
+Franka Panda, UR5e, UR20, NVIDIA Jetson and Orin, industrial induction cells
 \sectionsep
 
 %--------------- EDUCATION ---------------
@@ -135,16 +137,24 @@ Scholar:// \href{https://scholar.google.com/citations?user=6MNXSfsAAAAJ}{\bf G.\
 
 \subsection{University of Colorado Boulder}
 \descript{Ph.D.\ in Computer Science}
-\location{Aug.\ 2021 -- May 2027 (exp.) | Boulder, CO}
+\location{Expected May 2027 | Boulder, CO}
 HIRO Group \\
 Advisor: Prof.\ A.\ Roncone
 \sectionsep
 
 \subsection{University of Texas at Austin}
 \descript{B.S.\ in Aerospace Engineering}
-\location{Aug.\ 2017 -- May 2021 | Austin, TX}
+\location{May 2021 | Austin, TX}
 Human Centered Robotics Lab \\
-(2018--2021)
+(2018–2021)
+\sectionsep
+
+%--------------- AWARDS ---------------
+\section{Awards}
+\begin{tabular}{rl}
+2022\,–\ 2026 & NASA NSTGRO Fellowship \\
+           & (Grant 80NSSC22K1211) \\
+\end{tabular}
 \sectionsep
 
 \end{minipage}
@@ -159,78 +169,71 @@ Human Centered Robotics Lab \\
 
 \runsubsection{HIRO Group, CU Boulder}
 \descript{| PhD Researcher \& NASA NSTGRO Fellow}
-\location{Aug.\ 2021 -- Present | Boulder, CO}
-\vspace{0.3cm}
+\location{Aug 2021 – Present | Boulder, CO}
+\vspace{0.3cm}  % needed: the first list after a \section otherwise overlaps the location line
 \begin{tightemize}
-\item Built \textbf{DEFT}, a diffusion policy conditioned on embodiment \& task that recovers from arbitrary joint failures on a 7-DoF Franka Panda: \textbf{99.5\%} success on unconstrained motion (vs.\ 42.4\% RRT) and \textbf{46.4\%} on constrained motion (vs.\ 30.9\% diff.\ IK) across \textbf{4.7M} trajectories / \textbf{4.7k} failure conditions (\textit{ICRA'26}).
-\item Achieved \textbf{10/10} real-world task completion (drawer manipulation, whiteboard erasing) under multi-joint failures where classical trajectory optimization fails entirely.
-\item Showed pushing/poking primitives expand a failure-constrained workspace by up to \textbf{79\%} and recover \textbf{88.9\%} task success when the end-effector is unusable (\textit{IROS'24}).
-\item Co-authored CERG (\textit{IFAC'26}) with the ROCC Lab; mentored junior PhD and undergraduate researchers.
+\item Built \textbf{DEFT}, a diffusion policy that recovers from any joint failure on a 7-DoF Franka arm without retraining: 99.5\% task success vs 42.4\% for RRT, 10/10 real-world tasks with multiple joints locked, trained on 4.7M trajectories (ICRA 2026)
+\item Designed a fail-active controller for a two-arm package induction cell that reroutes work around faulty arms and conveyors instead of halting: a diffusion policy conditioned on a graph of each component's remaining capacity; 10$\times$ the throughput of the same policy without the graph under severe faults (ICRA 2027, under review)
+% TODO: confirm the 10x against the final Table I numbers.
+\item Tested whether the language model in a vision-language-action (VLA) policy affects the robot's actions, using logs from a production sorting arm; perturbing its output barely changed the picks, so the policy was mostly behavior cloning
+\item Developed pushing and poking primitives that complete tasks after an end-effector failure: reachable workspace up to 79\% larger, 88.9\% task success (IROS 2024)
+\item Co-developed \textbf{CERG}, a controller that bounds the arm's energy during contact (IFAC WC 2026, oral); mentor junior PhD students and undergraduates
 \end{tightemize}
 \sectionsep
 
 \runsubsection{Plus One Robotics}
-\descript{| Robotics AI/ML Researcher (Summer Intern)}
-\location{Jun.\ 2025 -- Aug.\ 2025 | Boulder, CO}
+\descript{| Robotics AI/ML Researcher (Part-time)}
+\location{June 2025 – Present | Boulder, CO}
 \begin{tightemize}
-\item Built vision-driven recovery for intelligent package sorting: detect failed picks, formulate recovery plans, and re-engage without operator intervention.
-\item Coordinated a fleet of robotic arms and conveyor systems to keep warehouse throughput high under partial failures.
-\end{tightemize}
-\sectionsep
-
-\runsubsection{Johns Hopkins APL}
-\descript{| Robotics Engineer (Summer Intern)}
-\location{May 2021 -- Aug.\ 2021 | Laurel, MD}
-\begin{tightemize}
-\item Robotics engineering on APL programs combining hardware integration, controls, and applied research.
+\item Built the proof of concept for learned motion planning on the package induction cell, aimed at cutting new-site spin-up from 8–12 weeks to 6–10 by removing most post-install tuning; the CTO reassigned about 6 engineers to productionize it
+\item Fine-tuned a VLA policy on 20 hours of test-cell data; after 3 months it runs the cell at 65\% of the classical system's throughput and retries failed picks without the hand-coded confirmation step the classical system needs
+\item Designed the policy architecture the team builds on: a scalable multi-model task and motion planning approach, physically-grounded through a graph representation of the cell, so one policy runs across multiple cells with different arms and conveyors
+\item Built a half-size test cell with robots and conveyors in a closed loop, and a five-conveyor, two-arm Isaac Sim model that has generated 150+ hours of training data; test on the full-scale cell in San Antonio every two months
 \end{tightemize}
 \sectionsep
 
 \runsubsection{Human Centered Robotics Lab, UT Austin}
 \descript{| Undergraduate Researcher}
-\location{Jan.\ 2018 -- May 2021 | Austin, TX}
+\location{Jan 2018 – May 2021 | UT Austin Villa RoboCup@Home | Austin, TX}
 \begin{tightemize}
-\item Multi-year undergraduate research role (Prof.\ Luis Sentis) spanning perception, planning, and task execution for service robots.
-\item Member of the \textbf{UT Austin Villa @ Home} RoboCup team; co-authored the AAAI AI-HRI 2019 team report.
+\item Trained object-recognition models for the team's home-service robot (2019) and implemented data augmentation techniques that improved recognition performance from 60\% to >95\% in real world; co-authored the team's RoboCup 2019 report
+% TODO: a dataset size or accuracy delta here would match the DEFT bullet's weight.
+\item Built the robot's navigation, task planning, and behavior-tree task execution with Prof.\ Luis Sentis and Prof. Justin Hart; co-authored the team's AAAI AI-HRI 2019 report
 \end{tightemize}
 \sectionsep
 
-\runsubsection{METECS}
-\descript{| Robotics Software Engineer (Summer Intern)}
-\location{May 2020 -- Aug.\ 2020 | Houston, TX}
+\runsubsection{METECS, NASA Johnson Space Center}
+\descript{| Robotics Software Intern}
+\location{May 2020 – Aug 2020 | Dexterous Robotics Lab, Houston, TX}
 \begin{tightemize}
-\item Robotics software for space-station / aerospace applications: multibody dynamics, controls, simulation, and HW/SW integration.
+\item Wrote affordance templates, reusable task models of grasp points and motions, so Robonaut 2, NASA's International Space Station humanoid, could open latches and doors
 \end{tightemize}
 \sectionsep
 
-%--------------- SELECTED PROJECTS ---------------
-% NOTE: Customize this section for each application.
-% Manipulation / autonomy team -> DEFT + non-prehensile.
-% Controls / safety-critical    -> CERG.
-% Industry / warehouse robotics -> Plus One sorting.
-\section{Selected Projects}
+\runsubsection{Johns Hopkins APL}
+\descript{| Robotics Software Engineer (Intern)}
+\location{June 2021 – July 2021 | Remote, Laurel, MD}
+\begin{tightemize}
+\item Built a ROS 1 and ROS 2 simulator with Gazebo models of real buildings so the team could keep developing between tests on the physical robots
+\end{tightemize}
+\sectionsep
+
+%--------------- PUBLICATIONS ---------------
+% Replaces the old "Selected Projects" block, which duplicated the
+% experience bullets. A real list reads as "published doctorate" at a
+% glance, which is the HFC screen.
+% TODO: swap short-form titles for full titles where marked, and add a
+% marker (e.g. \dag) on first-author entries.
+\section{Publications}
 \vspace{0.3cm}
 \begin{tightemize}
-\item \textbf{DEFT --- Embodiment-aware Diffusion Policy} -- Conditioned on per-joint position/velocity limits and task type; used start--goal inpainting + output clamping to hard-enforce endpoint feasibility. Generalized to 4.7k unseen failure conditions on hardware (\textit{ICRA 2026}).
-\item \textbf{Non-Prehensile Failure Recovery} -- Modeled failure-constrained workspaces; pre-computed pushing/poking primitives selected via a sim-in-the-loop planner. 88.9\% task success without a working end-effector (\textit{IROS 2024}).
-\item \textbf{CERG --- Compliant Explicit Reference Governor} -- Online reference modulation for safe contact-rich manipulation (\textit{IFAC 2026}).
+\item \textbf{ICRA 2027} (under review) — \textit{What Can My Neighbor Still Do? Fail-Active Control for Process-Coupled Robot Cells via Graph-Conditioned Diffusion}
+\item \textbf{ICRA 2027} (under review) — \href{https://arxiv.org/abs/2603.14634}{PBD-R}: Rigid-Body Dynamics in Particle-Based Simulation % TODO full title if it fits
+\item \textbf{ICRA 2026} — DEFT: diffusion policy for joint-failure recovery % TODO full title
+\item \textbf{IFAC WC 2026} (oral) — CERG: Compliant Explicit Reference Governor % TODO full title
+\item \textbf{IROS 2024} — task recovery after end-effector failure via pushing and poking % TODO full title
 \end{tightemize}
-\sectionsep
-
-%--------------- PUBLICATIONS & PATENTS ---------------
-\section{Publications \& Patents}
-5\texttt{+} papers (peer-reviewed \& preprint): IEEE ICRA, IEEE/RSJ IROS, IFAC, AAAI AI-HRI, arXiv. \\
-Recent preprint: \textbf{PBD-R} -- Physically Accurate Rigid-Body Dynamics in Particle-Based Simulation (\href{https://arxiv.org/abs/2603.14634}{arXiv:2603.14634}). \\
-Issued U.S.\ Patent: \href{https://patents.google.com/patent/US10339827B2}{\textbf{US 10,339,827}}. \\
-Full list: \href{https://scholar.google.com/citations?user=6MNXSfsAAAAJ}{Google Scholar}.
-\sectionsep
-
-%--------------- AWARDS ---------------
-\section{Awards}
-\begin{tabular}{rl}
-2022\,--\,/ & NASA NSTGRO Fellowship \\
-            & (Grant 80NSSC22K1211) \\
-\end{tabular}
+Issued U.S.\ Patent \href{https://patents.google.com/patent/US10339827B2}{\textbf{10,339,827}}. Full list on \href{https://scholar.google.com/citations?user=6MNXSfsAAAAJ}{Google Scholar}.
 \sectionsep
 
 \end{minipage}
