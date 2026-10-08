@@ -31,6 +31,23 @@
 \usepackage{pifont}
 \newcommand{\githubstars}[1]{[{\faGithubSquare}\,\ding{72}\,\textbf{#1}]}
 
+% Tighten the inter-section spacing (class default is 7pt). Spelling out
+% the full conference names in Publications adds a wrapped line per entry;
+% trimming \sectionsep keeps the whole resume on a single page.
+\renewcommand{\sectionsep}{\vspace{3pt}}
+
+% Make all text pure black. The Deedy class ships four gray tones
+% (primary body #2b2b2b, headings #6A6A6A, subheadings #333, dates #666);
+% redefining the color names overrides every \color{...} use downstream.
+\definecolor{primary}{HTML}{000000}
+\definecolor{headings}{HTML}{000000}
+\definecolor{subheadings}{HTML}{000000}
+\definecolor{date}{HTML}{000000}
+
+% ...except the section headers (Skills, Education, Awards, Experience,
+% Publications), which keep the Deedy class's original #6A6A6A gray.
+\definecolor{sectiongray}{HTML}{6A6A6A}
+
 % -----------------------------------------------------------------------------
 % Font weight overrides
 %
@@ -64,7 +81,7 @@
 
 % Section headings (\section{...}) -- use Bold Lato instead of Light.
 \titleformat{\section}{
-  \color{headings}\scshape\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{14pt}{17pt}\selectfont \raggedright\uppercase
+  \color{sectiongray}\scshape\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{14pt}{17pt}\selectfont \raggedright\uppercase
 }{}{0em}{}
 
 % Name section -- bigger name than the original Deedy default (20pt -> 32pt),
@@ -100,7 +117,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \namesection{Gilberto G.}{Briscoe-Martinez}{
   \urlstyle{same}\href{https://gilberto.martinez.phd}{gilberto.martinez.phd} |
-  \href{mailto:gilberto.briscoe-martinez@colorado.edu}{gilberto.briscoe-martinez@colorado.edu} |
+  \href{mailto:gilbert.martinez675@gmail.com}{gilbert.martinez675@gmail.com} |
   \href{https://www.linkedin.com/in/gbmartinez}{LinkedIn} |
   \href{https://github.com/ggb367}{GitHub} |
   \href{https://scholar.google.com/citations?user=6MNXSfsAAAAJ}{Scholar}
@@ -152,8 +169,12 @@ Human Centered Robotics Lab \\
 %--------------- AWARDS ---------------
 \section{Awards}
 \begin{tabular}{rl}
+2026\,–\ 2027 & Plus One Industry Fellowship \\
 2022\,–\ 2026 & NASA NSTGRO Fellowship \\
            & (Grant 80NSSC22K1211) \\
+2021\,–\ 2022 & Graduate Education for \\
+           & Minorities (GEM) Industry \\
+           & Fellowship \\
 \end{tabular}
 \sectionsep
 
@@ -170,14 +191,14 @@ Human Centered Robotics Lab \\
 \runsubsection{HIRO Group, CU Boulder}
 \descript{| PhD Researcher \& NASA NSTGRO Fellow}
 \location{Aug 2021 – Present | Boulder, CO}
-\vspace{0.3cm}  % needed: the first list after a \section otherwise overlaps the location line
+\vspace{0.25cm}  % needed: the first list after a \section otherwise overlaps the location line
 \begin{tightemize}
-\item Built \textbf{DEFT}, a diffusion policy that recovers from any joint failure on a 7-DoF Franka arm without retraining: 99.5\% task success vs 42.4\% for RRT, 10/10 real-world tasks with multiple joints locked, trained on 4.7M trajectories (ICRA 2026)
-\item Designed a fail-active controller for a two-arm package induction cell that reroutes work around faulty arms and conveyors instead of halting: a diffusion policy conditioned on a graph of each component's remaining capacity; 10$\times$ the throughput of the same policy without the graph under severe faults (ICRA 2027, under review)
+\item Pioneered a diffusion policy that recovers from any joint failure on a 7-DoF Franka arm without retraining: 99.5\% task success vs 42.4\% for RRT, 10/10 real-world tasks with multiple joints locked, trained on 4.7M trajectories (ICRA 2026)
+\item Architected a fail-active controller for a two-arm package induction cell that reroutes work around faulty arms and conveyors instead of halting: a diffusion policy conditioned on a graph of each component's remaining capacity; 10$\times$ the throughput of the same policy without the graph under severe faults (ICRA 2027, under review)
 % TODO: confirm the 10x against the final Table I numbers.
-\item Tested whether the language model in a vision-language-action (VLA) policy affects the robot's actions, using logs from a production sorting arm; perturbing its output barely changed the picks, so the policy was mostly behavior cloning
-\item Developed pushing and poking primitives that complete tasks after an end-effector failure: reachable workspace up to 79\% larger, 88.9\% task success (IROS 2024)
-\item Co-developed \textbf{CERG}, a controller that bounds the arm's energy during contact (IFAC WC 2026, oral); mentor junior PhD students and undergraduates
+\item Directed an investigation into whether the language model in a vision-language-action (VLA) policy affects the robot's actions, using logs from a production sorting arm; perturbing its output barely changed the picks, so the policy was mostly behavior cloning
+\item Devised pushing and poking primitives that complete tasks after an end-effector failure: reachable workspace up to 79\% larger, 88.9\% task success (IROS 2024)
+\item Co-developed a controller that bounds the arm's energy during contact (IFAC World Congress 2026, oral); mentor junior PhD students and undergraduates
 \end{tightemize}
 \sectionsep
 
@@ -185,10 +206,10 @@ Human Centered Robotics Lab \\
 \descript{| Robotics AI/ML Researcher (Part-time)}
 \location{June 2025 – Present | Boulder, CO}
 \begin{tightemize}
-\item Built the proof of concept for learned motion planning on the package induction cell, aimed at cutting new-site spin-up from 8–12 weeks to 6–10 by removing most post-install tuning; the CTO reassigned about 6 engineers to productionize it
-\item Fine-tuned a VLA policy on 20 hours of test-cell data; after 3 months it runs the cell at 65\% of the classical system's throughput and retries failed picks without the hand-coded confirmation step the classical system needs
-\item Designed the policy architecture the team builds on: a scalable multi-model task and motion planning approach, physically-grounded through a graph representation of the cell, so one policy runs across multiple cells with different arms and conveyors
-\item Built a half-size test cell with robots and conveyors in a closed loop, and a five-conveyor, two-arm Isaac Sim model that has generated 150+ hours of training data; test on the full-scale cell in San Antonio every two months
+\item Delivered the proof of concept for learned motion planning on the package induction cell, aimed at cutting new-site spin-up from 8–12 weeks to 6–10 by removing most post-install tuning; the CTO reassigned about 6 engineers to productionize it
+\item Owned the fine-tuning of a VLA policy on 20 hours of test-cell data; after 3 months it runs the cell at 65\% of the classical system's throughput and retries failed picks without the hand-coded confirmation step the classical system needs
+\item Established the policy architecture the team builds on: a scalable multi-model task and motion planning approach, physically-grounded through a graph representation of the cell, so one policy runs across multiple cells with different arms and conveyors
+\item Built out a half-size test cell with robots and conveyors in a closed loop, and a five-conveyor, two-arm Isaac Sim model that has generated 150+ hours of training data; test on the full-scale cell in San Antonio every two months
 \end{tightemize}
 \sectionsep
 
@@ -210,7 +231,7 @@ Human Centered Robotics Lab \\
 \end{tightemize}
 \sectionsep
 
-\runsubsection{Johns Hopkins APL}
+\runsubsection{Johns Hopkins University Applied Physics Laboratory}
 \descript{| Robotics Software Engineer (Intern)}
 \location{June 2021 – July 2021 | Remote, Laurel, MD}
 \begin{tightemize}
@@ -224,16 +245,15 @@ Human Centered Robotics Lab \\
 % glance, which is the HFC screen.
 % TODO: swap short-form titles for full titles where marked, and add a
 % marker (e.g. \dag) on first-author entries.
-\section{Publications}
-\vspace{0.3cm}
+\section{Selected Publications}
+\vspace{0.12cm}
 \begin{tightemize}
-\item \textbf{ICRA 2027} (under review) — \textit{What Can My Neighbor Still Do? Fail-Active Control for Process-Coupled Robot Cells via Graph-Conditioned Diffusion}
-\item \textbf{ICRA 2027} (under review) — \href{https://arxiv.org/abs/2603.14634}{PBD-R}: Rigid-Body Dynamics in Particle-Based Simulation % TODO full title if it fits
-\item \textbf{ICRA 2026} — DEFT: diffusion policy for joint-failure recovery % TODO full title
-\item \textbf{IFAC WC 2026} (oral) — CERG: Compliant Explicit Reference Governor % TODO full title
-\item \textbf{IROS 2024} — task recovery after end-effector failure via pushing and poking % TODO full title
+\item \textbf{IEEE International Conference on Robotics and Automation (ICRA) 2027} (under review) — \textit{What Can My Neighbor Still Do? Fail-Active Control for Process-Coupled Robot Cells via Graph-Conditioned Diffusion}
+\item \textbf{IEEE International Conference on Robotics and Automation (ICRA) 2026} — Moving On, Even When You're Broken: Fail-Active Trajectory Generation via Diffusion Policies Conditioned on Embodiment and Task
+\item \textbf{IFAC World Congress 2026} (oral) — Compliant Explicit Reference Governor for Contact Friendly Robotic Manipulators
+\item \textbf{IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2024} — Exploring How Non-Prehensile Manipulation Expands Capability in Robots Experiencing Multi-Joint Failure
 \end{tightemize}
-Issued U.S.\ Patent \href{https://patents.google.com/patent/US10339827B2}{\textbf{10,339,827}}. Full list on \href{https://scholar.google.com/citations?user=6MNXSfsAAAAJ}{Google Scholar}.
+Issued U.S.\ Patent \href{https://patents.google.com/patent/US10339827B2}{\textbf{10,339,827}}. Full publication list on \href{https://scholar.google.com/citations?user=6MNXSfsAAAAJ}{Google Scholar}.
 \sectionsep
 
 \end{minipage}

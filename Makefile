@@ -2,8 +2,8 @@
 # Build CV (Awesome-CV format) and Resume (Deedy format) into assets/pdf/.
 #
 # Both source trees live in this repo:
-#   cv/     -> compiled to assets/pdf/cv.pdf
-#   resume/ -> compiled to assets/pdf/resume.pdf
+#   cv/     -> compiled to assets/pdf/gilberto_briscoe-martinez_cv.pdf
+#   resume/ -> compiled to assets/pdf/gilberto_briscoe-martinez_resume.pdf
 #
 # The LaTeX class files (awesome-cv.cls, deedy-resume-openfont.cls, fonts)
 # live inside the cv-templates/Awesome-PhD-CV submodule. We point xelatex at
@@ -30,6 +30,11 @@ OUT_DIR       := $(ROOT)/assets/pdf
 
 CV_SRC_DIR    := $(ROOT)/cv
 RES_SRC_DIR   := $(ROOT)/resume
+
+# Output base names (xelatex -jobname). The compiled PDF is written with
+# this name directly -- there is no intermediate cv.pdf / resume.pdf.
+CV_OUT        := gilberto_briscoe-martinez_cv
+RES_OUT       := gilberto_briscoe-martinez_resume
 
 # Deedy's class file references fonts/ via a *relative* path
 # (Path = fonts/lato/ inside the .cls), so fontspec resolves it from
@@ -64,21 +69,21 @@ cv: check-submodule | $(OUT_DIR)
 	@echo "Building CV (Awesome-CV format)..."
 	cd $(CV_SRC_DIR) && \
 		TEXINPUTS=".:$(CV_TEMPLATE):" \
-		$(XELATEX) cv.tex && \
+		$(XELATEX) -jobname=$(CV_OUT) cv.tex && \
 		TEXINPUTS=".:$(CV_TEMPLATE):" \
-		$(XELATEX) cv.tex
-	cp $(CV_SRC_DIR)/cv.pdf $(OUT_DIR)/cv.pdf
-	@echo "Wrote $(OUT_DIR)/cv.pdf"
+		$(XELATEX) -jobname=$(CV_OUT) cv.tex
+	cp $(CV_SRC_DIR)/$(CV_OUT).pdf $(OUT_DIR)/$(CV_OUT).pdf
+	@echo "Wrote $(OUT_DIR)/$(CV_OUT).pdf"
 
 resume: check-submodule $(RES_FONTS_LINK) | $(OUT_DIR)
 	@echo "Building Resume (Deedy format)..."
 	cd $(RES_SRC_DIR) && \
 		TEXINPUTS=".:$(RES_TEMPLATE):" \
-		$(XELATEX) resume.tex && \
+		$(XELATEX) -jobname=$(RES_OUT) resume.tex && \
 		TEXINPUTS=".:$(RES_TEMPLATE):" \
-		$(XELATEX) resume.tex
-	cp $(RES_SRC_DIR)/resume.pdf $(OUT_DIR)/resume.pdf
-	@echo "Wrote $(OUT_DIR)/resume.pdf"
+		$(XELATEX) -jobname=$(RES_OUT) resume.tex
+	cp $(RES_SRC_DIR)/$(RES_OUT).pdf $(OUT_DIR)/$(RES_OUT).pdf
+	@echo "Wrote $(OUT_DIR)/$(RES_OUT).pdf"
 
 $(OUT_DIR):
 	mkdir -p $(OUT_DIR)

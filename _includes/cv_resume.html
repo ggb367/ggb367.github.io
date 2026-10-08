@@ -6,13 +6,13 @@
   in the URL hash (#cv or #resume) so links and back/forward work.
 
   Parameters:
-    include.cv_path     -- path to the CV PDF      (default: /assets/pdf/cv.pdf)
-    include.resume_path -- path to the Resume PDF  (default: /assets/pdf/resume.pdf)
+    include.cv_path     -- path to the CV PDF      (default: /assets/pdf/gilberto_briscoe-martinez_cv.pdf)
+    include.resume_path -- path to the Resume PDF  (default: /assets/pdf/gilberto_briscoe-martinez_resume.pdf)
     include.default     -- which to show first     ("resume" or "cv", default: "resume")
 {%- endcomment -%}
 
-{% assign cv_path     = include.cv_path     | default: "/assets/pdf/cv.pdf" %}
-{% assign resume_path = include.resume_path | default: "/assets/pdf/resume.pdf" %}
+{% assign cv_path     = include.cv_path     | default: "/assets/pdf/gilberto_briscoe-martinez_cv.pdf" %}
+{% assign resume_path = include.resume_path | default: "/assets/pdf/gilberto_briscoe-martinez_resume.pdf" %}
 {% assign default_doc = include.default     | default: "resume" %}
 
 <section id="cv-resume-section">
