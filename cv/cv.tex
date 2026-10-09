@@ -62,7 +62,7 @@
 \definecolor{gray}{HTML}{000000}
 \definecolor{lightgray}{HTML}{000000}
 \definecolor{justblue}{HTML}{000000}
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+\renewcommand{\acvHeaderSocialSep}{\enskip\textbar\enskip}
 
 %-------------------------------------------------------------------------------
 % TYPOGRAPHY OVERRIDES
@@ -83,6 +83,13 @@
 \renewcommand*{\honorpositionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \renewcommand*{\honordatestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\color{graytext} #1}}
 \renewcommand*{\honorlocationstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\slshape\color{awesome} #1}}
+
+% Header block: the class sets the position / address / contact lines at a very
+% small 6.8--8pt. Bump them up (sizes only; colors/fonts unchanged) so the
+% subtitle and contact line read clearly under the name.
+\renewcommand*{\headerpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{awesome} #1}}
+\renewcommand*{\headeraddressstyle}[1]{{\fontsize{10pt}{1em}\headerfont\itshape\color{lighttext} #1}}
+\renewcommand*{\headersocialstyle}[1]{{\fontsize{9pt}{1em}\headerfont\color{text} #1}}
 
 % Rebalance the honor table: a slightly wider date column than the 1.5cm
 % default (so "2024, 2026" fits), a narrow right column (just "Journal" /
@@ -112,7 +119,6 @@
 \github{ggb367}
 \linkedin{gbmartinez}
 \googlescholar{6MNXSfsAAAAJ}{Google Scholar}
-\orcid{0000-0002-6107-1430}
 
 \newif\ifshowcontent
 \showcontenttrue
